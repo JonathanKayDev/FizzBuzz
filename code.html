@@ -169,15 +169,29 @@
                 <div class="col-lg-4">
                     <p>The Code is structured in five functions.</p>
                     <h5>getValues</h5>
-                    <p>#</p>
+                    <p>This function retrieves the user input from the page by utilising <strong>getElementById</strong>, and then converts the input to the Number type.
+                    A list of numbers is generated using the <strong>generateNumbers</strong> function (default 0 to 100), which allows for future expansion and customisation
+                    of the App. The input values are validated with the <strong>validateInput</strong> function, and if they are valid, the <strong>calculateFizzBuzz</strong>
+                     and <strong>displayResults</strong> functions are called, which generate the output of the App.</p>
                     <h5>generateNumbers</h5>
-                    <p>To allow for a custom numbers range, e.g. 500 to 600</p>
+                    <p>The purpose of this function is to allow for a custom number range in a future expansion of the App (e.g. 500 to 600, or any user input).
+                        The function accepts to parameters: <strong>sValue</strong> and <strong>eValue</strong>. A 'for' loop is then used to generate an array of numbers based on the range set by the input parameters.
+                         This number array is then returned as the output of the function.</p>
                     <h5>calculateFizzBuzz</h5>
-                    <p>#</p>
+                    <p>calculateFizzBuzz takes in three parameters: <strong>fValue</strong>, <strong>bValue</strong>, and <strong>numbersArray</strong>. A 'for' loop iterates over the length of the input numbers array and performs 
+                        logic checks, using 'if' statements, on the array values to see if they are multiples of the Fizz or Buzz values (<strong>fValue</strong> and <strong>bValue</strong>).
+                     Where this is true, a corresponding string is pushed to a separate results array, in with the same index as the numbers array. This way, we can see both the numbers and 
+                    the FizzBuzz values/multiples simultaneously, without overwriting the numbers when a multiple occurs.</p>
                     <h5>validateInput</h5>
-                    <p>#</p>
+                    <p>The validateInput function takes in two parameters, which are the user input Fizz and Buzz values. The function then uses 'if' statements to determine if 
+                        the values are not integers, and if they are not values between 1 and 100. If any of these statements are true, then the user is alerted with a corresponding message, and the function
+                         returns a boolean false value, to tell the program that the inputs are not validated.
+                    </p>
                     <h5>displayResults</h5>
-                    <p>#</p>
+                    <p>displayResults takes in two parameters: <strong>numbers</strong> and <strong>results</strong>. The tables where the results are to be inserted and a template structure of 
+                     the HTML rows are retrieved from the document using <strong>getElementById</strong>. A 'for' loop iterates over the length of the numbers array, and inserts the values of the 
+                    numbers array and results array to the table, using the <strong>appendChild</strong> function. The results (!= "") are also inserted to the class of the results table data using 
+                    <strong>classList.add</strong>, where the results are styled using corresponding CSS classes.</p>
                 </div>
             </div>
         </div>
