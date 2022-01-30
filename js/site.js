@@ -79,20 +79,29 @@ function validateInput(fValue, bValue) {
 }
 
 
-
 // VIEW FUNCTION(S)
 // Display results
 function displayResults(numbers, results) {
-    let templateRows = "";
-    let className = "";
+    // get the table body element from the page
+    let tableBody = document.getElementById("results");
+    // get the template row
+    let templateRow = document.getElementById("fbTemplate");
+    // clear the table first
+    tableBody.innerHTML="";
 
-    for (let index = 0; index < numbers.length; index++) {  
+    for (let index = 1; index < numbers.length; index++) {  
         let num = numbers[index];
         let result = results[index];
-        className = result;
+        let tableRow = document.importNode(templateRow.content, true);
+        let rowCols = tableRow.querySelectorAll("td");
 
-        templateRows += `<tr><td>${num}</td><td class="${className}">${result}</td></tr>`;
+        rowCols[0].textContent = num;
+        rowCols[1].textContent = result;
+        // can't add an empty string as a class
+        if (result != "") {
+            rowCols[1].classList.add(result);
+        }
+        
+        tableBody.appendChild(tableRow);
     }
-
-    document.getElementById("results").innerHTML = templateRows;
 }
